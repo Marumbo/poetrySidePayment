@@ -1,21 +1,29 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
 const app = express();
 
-const stripe = require("stripe")(process.env.secrect_key);
+const stripe = require("stripe")(process.env.secret_key);
+
 
 app.use(express.json());
+
+app.use(cors({
+    origin: 'http://localhost:3000'
+  }));
 
 
 mongoose.connect(process.env.dbURI)
 .then((result)=>{
     console.log('connected to db!')
-    console.log('Started server on port 4242!')
-    app.listen(4242);
+    
 })
 .catch((err)=> console.log(err));
+
+console.log('Started server on port 4242!')
+    app.listen(4242);
 
 app.use(express.urlencoded({extended:true}))
 
@@ -34,14 +42,17 @@ app.get('/public-key',(req,res)=>{
 
 })
 
-app.post('/create-payment-intent-poetry', async(req,res)=>{
+app.post('/create-payment-intent-poetry', async (req,res) =>{
 
     console.log("create payment intent")
     
     try {
-        const paymentIntent = await stripe.paymentIntent.create({
+        const paymentIntent = await stripe.paymentIntents.create({
             amount:500,
             currency:'usd',
+            automatic_payment_methods: {
+                enabled: true,
+              },
         })
 
         res.json({
