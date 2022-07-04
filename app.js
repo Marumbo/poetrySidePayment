@@ -23,7 +23,7 @@ mongoose.connect(process.env.dbURI)
 .catch((err)=> console.log(err));
 
 console.log('Started server on port 4242!')
-    app.listen(4242);
+    app.listen(process.env.PORT || 4242);
 
 app.use(express.urlencoded({extended:true}))
 
