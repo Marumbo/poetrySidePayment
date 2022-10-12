@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const messageRouter = require('./routes/messageRoutes')
+const purchaseRouter = require('./routes/purchaseRoutes')
+
 require('dotenv').config();
 
 const app = express();
@@ -71,3 +74,7 @@ app.post('/create-payment-intent-poetry', async (req,res) =>{
 
 
 })
+
+
+app.use('/messages', messageRouter)
+app.use('/purchase', purchaseRouter)

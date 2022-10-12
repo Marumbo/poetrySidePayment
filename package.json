@@ -1,9 +1,11 @@
 {
   "dependencies": {
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
     "cors": "^2.8.5",
-    "mongoose": "^6.4.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "mongodb": "^4.10.0",
+    "mongoose": "^6.6.5",
     "stripe": "^9.9.0"
   },
   "name": "poetrysidepayment",
