@@ -29,12 +29,12 @@ const message_index =(req,res)=>{
 
 const message_create_post = (req,res)=>{
     console.log(req.body)
-    const {name, email, message,target} = req.body;
+    const {name, email, messageBody,target} = req.body;
     
      const messageEntry = new Message({
          name: name,
          email:email,
-        messageBody:message,
+         messageBody:messageBody,
          target:target
      })
     
