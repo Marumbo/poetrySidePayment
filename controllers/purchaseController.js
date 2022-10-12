@@ -19,7 +19,7 @@ const purchase_index =(req,res)=>{
         res.json({
             status:'fail',
             message:'Purchse list failure',
-            error: error.message
+            error: err.message
         })
     })
 
@@ -55,7 +55,7 @@ const purchase_create_post = (req,res)=>{
         res.json({
             status:'fail',
             message:'purchase save failure',
-            error: error.message
+            error: err.message
         })
         
     })

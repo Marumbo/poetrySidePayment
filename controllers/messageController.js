@@ -19,7 +19,7 @@ const message_index =(req,res)=>{
         res.json({
             status:'fail',
             message:' message list failure',
-            error: error.message
+            error: err.message
         })
     })
 
@@ -56,7 +56,7 @@ const message_create_post = (req,res)=>{
         res.json({
             status:'fail',
             message:'message save failure',
-            error: error.message
+            error: err.message
         })
         
     })
