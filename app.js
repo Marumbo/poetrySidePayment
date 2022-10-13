@@ -13,12 +13,13 @@ const stripe = require("stripe")(process.env.secret_key);
 
 app.use(express.json());
 
-
+app.use(cors())
+/*
 app.use(cors({
     origin: '*',
     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }));
-
+*/
 
 mongoose.connect(process.env.dbURI)
 .then((result)=>{
