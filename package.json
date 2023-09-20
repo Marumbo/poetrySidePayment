@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "africastalking": "^0.6.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.2",
@@ -8,9 +9,9 @@
     "mongoose": "^6.6.5",
     "stripe": "^9.9.0"
   },
-  "name": "poetrysidepayment",
+  "name": "smsDashboardApi",
   "version": "1.0.0",
-  "description": "stripe payment server",
+  "description": "Back end for infotext",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
